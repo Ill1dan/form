@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <script src="home.js" defer></script>
+    <title>Practice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:ital,wght@0,300;0,500;1,300;1,500;1,700&family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8a0d75a546.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card" id="card">
+            <div class="upper">
+                <h4>Send us a message</h4>
+                <i class="fa-solid fa-minus"></i>
+            </div>
+            <div class="lower">
+                <form action="form-handler.php">
+                    <div class="input-group" id="one">
+                        <h5>YOUR NAME</h5>
+                        <input name="name" type="text" placeholder="Enter your name" id="contact-name" onkeyup="validateName()" required>
+                        <span id="name-error"></span>
+                    </div>
+                    <div class="input-group" id="two">
+                        <h5>EMAIL ADDRESS</h5>
+                        <input name="email" type="email" placeholder="Enter Email" id="contact-email" onkeyup="validateEmail()" required>
+                        <span id="email-error"></span>
+                    </div>
+                    <div class="input-group" id="three">
+                        <h5>YOUR MESSAGE</h5>
+                        <textarea name="message" rows="7" placeholder="Type your message here" id="contact-message" onkeyup="validateMessage()" required></textarea>
+                        <span id="message-error"></span>
+                    </div>
+                    <div class="input-group file" id="four">
+                        <h5>ATTACHMENTS</h5>
+                        <input name="file" type="file" id="file-label">
+                        <label for="file-label">Upload Files</label>
+                    </div>
+                    <button type="button" onclick="ValidateForm()" id="btnSubmit"><span>Send Message</span></button>
+                    <span id="submit-error"></span>
+                </form>
+            </div>
+        </div>
+        <div class="popup" id="popup">
+            <i class="fa-solid fa-check"></i>
+            <h2>Thank You!</h2>
+            <p>Your details has been successfully submitted. Thanks!</p>
+            <button type="button" onclick="closePopup()">OK</button>
+        </div>
+    </div>
+</body>
+</html>
